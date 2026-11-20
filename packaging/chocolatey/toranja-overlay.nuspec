@@ -4,7 +4,7 @@
     <id>toranja-overlay</id>
     <version>0.1.0</version>
     <packageSourceUrl>https://github.com/macielhenrique/toranja-overlay/tree/main/packaging/chocolatey</packageSourceUrl>
-    <owners>macielhenrique</owners>
+    <owners>toranjatech, macielhenrique</owners>
     <title>Toranja Overlay</title>
     <authors>Toranja Tech</authors>
     <projectUrl>https://github.com/macielhenrique/toranja-overlay</projectUrl>
