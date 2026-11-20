@@ -39,6 +39,16 @@ Baixe os arquivos oficiais na página de **[Releases](https://github.com/macielh
 | **Instalador Windows (Recomendado)** | `Toranja-Overlay-0.1.0-x64-setup.exe` | Instala para o usuário atual (sem precisar de Administrador), cria atalho no Menu Iniciar e inclui desinstalador. |
 | **Versão Portátil** | `Toranja-Overlay-0.1.0-x64-portable.zip` | Basta extrair a pasta e executar `toranja-overlay.exe` diretamente. |
 
+### Instalação via Chocolatey
+
+Se você usa o gerenciador de pacotes Chocolatey no Windows:
+
+```powershell
+choco install toranja-overlay
+```
+
+> O pacote foi submetido e está passando pelo processo oficial de moderação automatizada na [Galeria Chocolatey](https://community.chocolatey.org/packages/toranja-overlay). Assim que homologado, estará disponível para instalação direta via CLI.
+
 ### Requisitos do sistema
 
 - **Sistema operacional:** Windows 10 ou Windows 11 (64 bits).
