@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-open-social-stream-site"
+description = "Enables the open_social_stream_site command without any pre-configured scope."
+commands.allow = ["open_social_stream_site"]
+
+[[permission]]
+identifier = "deny-open-social-stream-site"
+description = "Denies the open_social_stream_site command without any pre-configured scope."
+commands.deny = ["open_social_stream_site"]

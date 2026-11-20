@@ -1,0 +1,11 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "editor-frame",
+  "description": "Permissões mínimas exclusivamente para a moldura local de modo edição (overlay-editor): arrastar, redimensionar e sair do modo edição.",
+  "windows": ["overlay-editor"],
+  "permissions": [
+    "core:window:allow-start-dragging",
+    "core:window:allow-start-resize-dragging",
+    "allow-set-overlay-edit-mode"
+  ]
+}

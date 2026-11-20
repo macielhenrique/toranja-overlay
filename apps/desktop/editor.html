@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toranja Overlay — Modo de Edição</title>
+  </head>
+  <body>
+    <div class="editor-frame">
+      <header
+        class="editor-topbar"
+        role="toolbar"
+        aria-label="Controles de posicionamento do overlay"
+        data-drag-surface
+      >
+        <div class="editor-drag-handle" data-drag-surface>
+          <span class="editor-dot" aria-hidden="true"></span>
+          <span class="editor-label">Modo edição · Arraste para mover</span>
+        </div>
+        <button
+          type="button"
+          id="btn-pin-overlay"
+          class="editor-pin-btn"
+          title="Fixar overlay e liberar cliques para o jogo (Esc)"
+        >
+          Fixar
+        </button>
+      </header>
+
+      <div class="editor-canvas" data-drag-surface>
+        <span class="editor-hint" aria-hidden="true">
+          Arraste para posicionar · Puxe as bordas · Esc fixa
+        </span>
+      </div>
+
+      <div class="resize-handle resize-n" data-resize="North" aria-hidden="true"></div>
+      <div class="resize-handle resize-s" data-resize="South" aria-hidden="true"></div>
+      <div class="resize-handle resize-e" data-resize="East" aria-hidden="true"></div>
+      <div class="resize-handle resize-w" data-resize="West" aria-hidden="true"></div>
+      <div class="resize-handle resize-nw" data-resize="NorthWest" aria-hidden="true"></div>
+      <div class="resize-handle resize-ne" data-resize="NorthEast" aria-hidden="true"></div>
+      <div class="resize-handle resize-sw" data-resize="SouthWest" aria-hidden="true"></div>
+      <div class="resize-handle resize-se" data-resize="SouthEast" aria-hidden="true"></div>
+    </div>
+
+    <script type="module" src="/src/editor.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toranja Overlay</title>
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside id="sidebar-root" class="sidebar" aria-label="Navegação principal"></aside>
+
+      <div class="workspace">
+        <header class="page-header">
+          <div class="page-header-copy">
+            <h1 id="page-title">Carregando...</h1>
+            <p id="page-subtitle" class="page-subtitle">
+              Preparando configurações locais do aplicativo.
+            </p>
+          </div>
+          <span class="version-tag">WINDOWS · v0.1</span>
+        </header>
+
+        <div
+          id="feedback-bar"
+          class="feedback-bar"
+          data-tone="info"
+          role="status"
+          aria-live="polite"
+          hidden
+        ></div>
+
+        <main id="view-root" class="view-root" tabindex="-1">
+          <div class="card loading-card">
+            <p class="card-subtitle">Carregando estado local do Toranja Overlay...</p>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div
+      id="a11y-announcer"
+      class="visually-hidden"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

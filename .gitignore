@@ -1,0 +1,27 @@
+# Local legacy reference; never publish the historical Electron project.
+/legacy/
+
+# Build and dependency output.
+node_modules/
+dist/
+target/
+/release/
+*.tmp
+apps/web/.vercel/
+apps/web/.next/
+
+# Local configuration and secrets.
+.env
+.env.*
+!.env.example
+*.local
+
+# OS and editor files.
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Tauri generated files.
+apps/desktop/src-tauri/gen/
+

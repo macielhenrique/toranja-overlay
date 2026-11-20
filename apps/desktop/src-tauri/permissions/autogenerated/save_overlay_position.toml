@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-save-overlay-position"
+description = "Enables the save_overlay_position command without any pre-configured scope."
+commands.allow = ["save_overlay_position"]
+
+[[permission]]
+identifier = "deny-save-overlay-position"
+description = "Denies the save_overlay_position command without any pre-configured scope."
+commands.deny = ["save_overlay_position"]

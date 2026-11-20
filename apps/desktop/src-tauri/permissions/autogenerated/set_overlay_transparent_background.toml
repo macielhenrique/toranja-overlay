@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-set-overlay-transparent-background"
+description = "Enables the set_overlay_transparent_background command without any pre-configured scope."
+commands.allow = ["set_overlay_transparent_background"]
+
+[[permission]]
+identifier = "deny-set-overlay-transparent-background"
+description = "Denies the set_overlay_transparent_background command without any pre-configured scope."
+commands.deny = ["set_overlay_transparent_background"]

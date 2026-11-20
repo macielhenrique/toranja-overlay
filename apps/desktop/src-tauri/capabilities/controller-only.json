@@ -1,0 +1,28 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "controller-only",
+  "description": "Concede permissões mínimas do núcleo Tauri e comandos do overlay exclusivamente à janela do controlador local (main). A janela de overlay remota (overlay) não recebe nenhuma capability nativa.",
+  "windows": ["main"],
+  "permissions": [
+    "core:event:allow-listen",
+    "core:event:allow-unlisten",
+    "allow-validate-overlay-url",
+    "allow-get-overlay-state",
+    "allow-get-saved-url",
+    "allow-save-overlay-url",
+    "allow-start-overlay",
+    "allow-stop-overlay",
+    "allow-set-overlay-click-through",
+    "allow-set-overlay-edit-mode",
+    "allow-set-overlay-always-on-top",
+    "allow-set-overlay-opacity",
+    "allow-set-overlay-transparent-background",
+    "allow-set-overlay-visibility",
+    "allow-set-overlay-bounds",
+    "allow-save-overlay-position",
+    "allow-reset-overlay-position",
+    "allow-update-automation-settings",
+    "allow-recover-overlay",
+    "allow-open-social-stream-site"
+  ]
+}

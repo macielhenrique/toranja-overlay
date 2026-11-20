@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-set-overlay-opacity"
+description = "Enables the set_overlay_opacity command without any pre-configured scope."
+commands.allow = ["set_overlay_opacity"]
+
+[[permission]]
+identifier = "deny-set-overlay-opacity"
+description = "Denies the set_overlay_opacity command without any pre-configured scope."
+commands.deny = ["set_overlay_opacity"]

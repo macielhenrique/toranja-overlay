@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-reset-overlay-position"
+description = "Enables the reset_overlay_position command without any pre-configured scope."
+commands.allow = ["reset_overlay_position"]
+
+[[permission]]
+identifier = "deny-reset-overlay-position"
+description = "Denies the reset_overlay_position command without any pre-configured scope."
+commands.deny = ["reset_overlay_position"]
