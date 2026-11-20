@@ -2,7 +2,7 @@
 
 ## Status da licença do produto
 
-A licença pública definitiva do **Toranja Overlay** ainda aguarda decisão final do mantenedor antes da inclusão do arquivo `LICENSE` na raiz do repositório. O código de `apps/desktop` foi desenvolvido do zero em **Tauri 2 + Rust + TypeScript**, utilizando referências históricas apenas para entender requisitos funcionais — sem copiar nem incorporar código GPL de terceiros no novo aplicativo.
+O **Toranja Overlay** é distribuído sob a **[Licença MIT](../LICENSE)**. O código de `apps/desktop` foi desenvolvido do zero em **Tauri 2 + Rust + TypeScript**, utilizando referências históricas apenas para entender requisitos funcionais — sem copiar nem incorporar código GPL de terceiros no novo aplicativo.
 
 O código histórico copiado localmente em `legacy/` permanece excluído do Git público pelo `.gitignore` e não é importado nem compilado em `apps/desktop`.
 
@@ -54,7 +54,7 @@ A árvore de compilação do `tauri` para Windows inclui 5 crates transitivas li
 
 ---
 
-## Checklist pendente antes da escolha final da licença
+## Checklist de licenciamento
 
-- [ ] Definir a licença final do código-fonte do Toranja Overlay (ex.: `MIT` ou `Apache-2.0`) e adicionar o arquivo `LICENSE` na raiz.
+- [x] Definir a licença final do código-fonte do Toranja Overlay (`MIT`) e adicionar o arquivo `LICENSE` na raiz.
 - [ ] Incluir avisos de atribuição em terceiro plano (`THIRD-PARTY-NOTICES`) caso a distribuição futura incorpore fontes locais ou bibliotecas extras.

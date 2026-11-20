@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>toranja-overlay</id>
+    <version>0.1.0</version>
+    <packageSourceUrl>https://github.com/macielhenrique/toranja-overlay/tree/main/packaging/chocolatey</packageSourceUrl>
+    <owners>macielhenrique</owners>
+    <title>Toranja Overlay</title>
+    <authors>Toranja Tech</authors>
+    <projectUrl>https://github.com/macielhenrique/toranja-overlay</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/macielhenrique/toranja-overlay@2dc29fd/apps/desktop/src-tauri/icons/128x128.png</iconUrl>
+    <copyright>2026 Toranja Tech</copyright>
+    <licenseUrl>https://github.com/macielhenrique/toranja-overlay/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/macielhenrique/toranja-overlay</projectSourceUrl>
+    <docsUrl>https://github.com/macielhenrique/toranja-overlay/blob/main/README.md</docsUrl>
+    <bugTrackerUrl>https://github.com/macielhenrique/toranja-overlay/issues</bugTrackerUrl>
+    <tags>toranja overlay chat streaming twitch youtube obs social-stream-ninja transparent click-through tauri</tags>
+    <summary>Lightweight transparent click-through chat overlay for single-monitor Windows streamers.</summary>
+    <description>Toranja Overlay is a free, open-source, 100% local Windows desktop application built with Tauri 2 + Rust to display your Social Stream Ninja chat directly over games on a single monitor.
+
+### Key Features
+
+- **True Mirror Transparency:** Automatically strips solid backgrounds (such as `dock.html`) with the **Fundo transparente** toggle and live opacity slider (`20%` - `100%`).
+- **Click-Through and Always-on-Top:** Keep chat floating over games while mouse clicks pass right through to the game window.
+- **Frameless Transparent Edit Frame:** Reposition and resize from all 8 edges/corners without breaking Windows DWM transparency (`Fixar` or `Esc`).
+- **Global Recovery Shortcuts:** `Ctrl + Shift + Alt + X` (toggle edit/pinned mode) and `Ctrl + Shift + Alt + H` (show/hide overlay).
+- **OBS Studio and Windows Automation:** Detects running OBS Studio processes (`obs64.exe`, `obs32.exe`, `obs.exe`) and supports optional startup with Windows (`--background`).
+- **Local Privacy:** No account, no login, no telemetry, and strict HTTPS origin isolation for `socialstream.ninja`.
+
+### Requirements and Notes
+
+- **OS:** Windows 10 / Windows 11 (64-bit) with Microsoft Edge WebView2 Runtime (installed automatically if missing on Windows 10).
+- **UI Language:** Brazilian Portuguese (`pt-BR`).
+- **Games Note:** Works best with games running in **Borderless Windowed** mode; Exclusive Fullscreen games control video output directly and do not guarantee third-party overlays.
+    </description>
+    <releaseNotes>https://github.com/macielhenrique/toranja-overlay/releases/tag/v0.1.0</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

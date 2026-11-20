@@ -32,7 +32,7 @@ O **Toranja Overlay** resolve isso criando uma janela **sempre visível e verdad
 
 ## Como baixar e instalar (Windows 10/11)
 
-Baixe os arquivos oficiais na página de **[Releases](../../releases)** do repositório:
+Baixe os arquivos oficiais na página de **[Releases](https://github.com/macielhenrique/toranja-overlay/releases)** do repositório:
 
 | Opção | Arquivo | Indicação |
 | :--- | :--- | :--- |
@@ -94,6 +94,7 @@ Para detalhes técnicos completos, consulte [docs/ARCHITECTURE.md](docs/ARCHITEC
 
 - [`apps/desktop/`](apps/desktop/): aplicação desktop Tauri 2 (backend Rust + frontend TypeScript/Vite).
 - [`apps/web/`](apps/web/): base inicial da landing page estática (futura publicação).
+- [`packaging/chocolatey/`](packaging/chocolatey/): definição do pacote Chocolatey (`toranja-overlay`) para distribuição no Windows.
 - [`docs/`](docs/): documentação de produto, arquitetura, design handoff, roadmap, resultados técnicos e auditoria de licenças.
 - [`.github/`](.github/): templates de issue, PR e diretrizes de workflows.
 
@@ -152,4 +153,4 @@ cargo clippy --all-targets -- -D warnings
 
 ## Licença
 
-A escolha da licença pública final e o registro completo de proveniência estão documentados em [docs/LICENSING.md](docs/LICENSING.md).
+O **Toranja Overlay** é software livre licenciado sob a **[Licença MIT](LICENSE)**. O inventário completo de dependências e proveniência está documentado em [docs/LICENSING.md](docs/LICENSING.md).

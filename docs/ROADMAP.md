@@ -35,6 +35,7 @@
 
 ## Fase 5 — publicação
 
-- [ ] Finalizar escolha da licença pública final (ex.: MIT ou Apache-2.0) e adicionar arquivo `LICENSE` após revisão final de [docs/LICENSING.md](LICENSING.md).
-- [ ] Publicar repositório e primeiro release (`v0.1.0`) no GitHub.
+- [x] Finalizar escolha da licença pública final (`MIT`) e adicionar arquivo `LICENSE` após revisão de [docs/LICENSING.md](LICENSING.md).
+- [x] Publicar repositório e primeiro release (`v0.1.0`) no GitHub.
+- [ ] Publicar pacote no Chocolatey Community Repository (`toranja-overlay`, manifesto pronto em `packaging/chocolatey/`).
 - [ ] Publicar a landing page em `overlay.toranjatech.com.br`.
