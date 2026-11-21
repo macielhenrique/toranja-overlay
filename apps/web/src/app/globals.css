@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+:root {
+  --toranja-orange: #f38a0f;
+  --toranja-yellow: #ffcd04;
+  --toranja-white: #ffffff;
+  --toranja-bg: #1e1208;
+  --toranja-deep: #300e00;
+  --toranja-surface: #28170b;
+  --toranja-border: #4d2812;
+  --toranja-muted: #c9ab91;
+  --toranja-body: #eedfd0;
+
+  color-scheme: dark;
+  accent-color: var(--toranja-orange);
+  scrollbar-color: #734d34 #1e1208;
+}
+
+@supports not (scrollbar-color: auto) {
+  :root::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  :root::-webkit-scrollbar-track {
+    background: var(--toranja-bg);
+  }
+
+  :root::-webkit-scrollbar-thumb {
+    background: #734d34;
+    border-radius: 6px;
+  }
+}
+
+@theme inline {
+  --color-toranja-orange: var(--toranja-orange);
+  --color-toranja-yellow: var(--toranja-yellow);
+  --color-toranja-bg: var(--toranja-bg);
+  --color-toranja-deep: var(--toranja-deep);
+  --color-toranja-surface: var(--toranja-surface);
+  --color-toranja-border: var(--toranja-border);
+  --color-toranja-muted: var(--toranja-muted);
+  --color-toranja-body: var(--toranja-body);
+
+  --font-display: "Clash Display", var(--font-inter), "Segoe UI", system-ui, sans-serif;
+  --font-sans: var(--font-inter), "Segoe UI", system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html {
+  background-color: var(--toranja-bg);
+  color: var(--toranja-body);
+  scroll-padding-top: calc(5.25rem + env(safe-area-inset-top, 0px));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background-color: var(--toranja-bg);
+  color: var(--toranja-body);
+  font-family: var(--font-sans);
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+:where(a, code) {
+  overflow-wrap: anywhere;
+}
+
+:where(a:any-link, button, summary, input, [tabindex]):focus-visible {
+  outline: 3px solid var(--toranja-yellow);
+  outline-offset: 3px;
+}
+
+@media (forced-colors: active) {
+  :where(a:any-link, button, summary, input, [tabindex]):focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 3px;
+  }
+}
+
+.skip-link {
+  position: fixed;
+  inset-block-start: -100%;
+  inset-inline-start: 1rem;
+  z-index: 100;
+  border-radius: 0.75rem;
+  background-color: var(--toranja-yellow);
+  color: var(--toranja-bg);
+  font-weight: 700;
+  padding: 0.75rem 1.125rem;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  inset-block-start: max(0.75rem, env(safe-area-inset-top, 0px));
+}
+
+/* Native tabs underline indicator that survives forced-colors mode without layout shift */
+[role="tab"] {
+  position: relative;
+}
+
+[role="tab"][aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0.5rem;
+  inset-block-end: 0;
+  border-block-end: 3px solid var(--toranja-orange);
+  border-radius: 999px;
+}
+
+@media (forced-colors: active) {
+  [role="tab"][aria-selected="true"]::after {
+    border-block-end-color: Highlight;
+  }
+}
+
+/* Native FAQ <details>/<summary> disclosure styling and progressive slide animation */
+.faq-item > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item > summary .faq-chevron {
+  transition: rotate 0.2s ease;
+}
+
+.faq-item[open] > summary .faq-chevron {
+  rotate: 180deg;
+}
+
+.faq-item::details-content {
+  interpolate-size: allow-keywords;
+  overflow: clip;
+  contain: layout;
+}
+
+.faq-item:not([open])::details-content {
+  block-size: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .faq-item::details-content {
+    transition: block-size 0.26s ease-in-out, content-visibility 0.26s ease-in-out;
+    transition-behavior: allow-discrete;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item > summary .faq-chevron {
+    transition: none;
+  }
+}
+
+/* Mobile menu popover positioning with fallback when CSS Anchor Positioning isn't supported */
+.mobile-nav-trigger {
+  anchor-name: --mobile-nav-trigger;
+}
+
+.mobile-nav-popover {
+  position: fixed;
+  inset: auto;
+  inset-block-start: calc(4.25rem + env(safe-area-inset-top, 0px));
+  inset-inline-end: max(1rem, env(safe-area-inset-right, 0px));
+  margin: 0;
+  inline-size: min(calc(100dvw - 2rem), 19.5rem);
+  max-block-size: calc(100dvh - 5.5rem);
+  overflow-y: auto;
+}
+
+@supports (inset-block-start: anchor(bottom)) {
+  .mobile-nav-popover {
+    inset-block-start: calc(anchor(--mobile-nav-trigger bottom) + 0.5rem);
+    inset-inline-end: max(1rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+.mobile-nav-popover::backdrop {
+  background: rgba(18, 9, 4, 0.55);
+  backdrop-filter: blur(4px);
+}
