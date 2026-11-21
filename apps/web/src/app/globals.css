@@ -112,23 +112,121 @@ li {
   inset-block-start: max(0.75rem, env(safe-area-inset-top, 0px));
 }
 
-/* Native tabs underline indicator that survives forced-colors mode without layout shift */
+/* Tab underline indicator container & forced-colors fallback */
 [role="tab"] {
   position: relative;
 }
 
-[role="tab"][aria-selected="true"]::after {
-  content: "";
-  position: absolute;
-  inset-inline: 0.5rem;
-  inset-block-end: 0;
-  border-block-end: 3px solid var(--toranja-orange);
-  border-radius: 999px;
+@media (forced-colors: active) {
+  [data-slot="install-tab-indicator"] {
+    border-block-end-color: Highlight !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [role="tabpanel"]:not([hidden]) > .install-panel-body {
+    animation: toranja-panel-enter 180ms ease-out;
+  }
+}
+
+@keyframes toranja-panel-enter {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Primary Hero CTA subtle shimmer & interactive depth */
+.toranja-cta-shimmer {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .toranja-cta-shimmer::after {
+    content: "";
+    position: absolute;
+    inset-block: -25%;
+    inset-inline-start: -45%;
+    inline-size: 38%;
+    background: linear-gradient(
+      110deg,
+      transparent 0%,
+      rgb(255 255 255 / 0.36) 50%,
+      transparent 100%
+    );
+    transform: translateX(-140%) skewX(-18deg);
+    pointer-events: none;
+    animation: toranja-cta-shine 5.6s ease-in-out infinite;
+  }
+
+  @media (hover: hover) {
+    .toranja-cta-shimmer {
+      transition:
+        background-color 180ms ease-out,
+        box-shadow 180ms ease-out,
+        translate 180ms ease-out,
+        scale 150ms ease-out;
+    }
+
+    .toranja-cta-shimmer:hover {
+      translate: 0 -1px;
+    }
+  }
+
+  .toranja-cta-shimmer:active {
+    scale: 0.985;
+  }
 }
 
 @media (forced-colors: active) {
-  [role="tab"][aria-selected="true"]::after {
-    border-block-end-color: Highlight;
+  .toranja-cta-shimmer::after {
+    display: none;
+  }
+}
+
+@keyframes toranja-cta-shine {
+  0%,
+  70% {
+    transform: translateX(-140%) skewX(-18deg);
+    opacity: 0;
+  }
+  76% {
+    opacity: 1;
+  }
+  92%,
+  100% {
+    transform: translateX(430%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+/* Subtle card hover elevation strictly on hover-capable devices */
+.toranja-card-hover {
+  transition:
+    border-color 180ms ease-out,
+    box-shadow 180ms ease-out,
+    translate 180ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toranja-card-hover {
+    transition:
+      border-color 180ms ease-out,
+      box-shadow 180ms ease-out;
+  }
+}
+
+@media (hover: hover) {
+  .toranja-card-hover:hover {
+    border-color: rgb(243 138 15 / 0.72);
+    box-shadow: 0 12px 28px -16px rgb(243 138 15 / 0.35);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .toranja-card-hover:hover {
+      translate: 0 -2px;
+    }
   }
 }
 

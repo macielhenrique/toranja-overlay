@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { ToranjaMotionProvider } from "@/components/MotionPrimitives";
 import { SITE } from "@/lib/site";
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
 const inter = Inter({
@@ -65,7 +67,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="pt-BR" className={cn(inter.variable, jetbrainsMono.variable)}>
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
         <link
@@ -74,7 +76,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-dvh flex flex-col bg-[#1E1208] text-[#EEDFD0] antialiased selection:bg-[#F38A0F] selection:text-[#1E1208]">
-        {children}
+        <ToranjaMotionProvider>{children}</ToranjaMotionProvider>
       </body>
     </html>
   );

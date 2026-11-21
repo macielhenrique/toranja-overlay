@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useRef, useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { SITE } from "@/lib/site";
 import { CopyCommandButton } from "./CopyCommandButton";
 import { DownloadIcon, ExternalLinkIcon } from "./Icons";
@@ -22,6 +23,7 @@ export function InstallTabs() {
   const baseId = useId();
   const [activeTab, setActiveTab] = useState<InstallTabId>("installer");
   const tabRefs = useRef<Partial<Record<InstallTabId, HTMLButtonElement | null>>>({});
+  const prefersReducedMotion = useReducedMotion();
 
   function selectAndFocusTab(tabId: InstallTabId) {
     setActiveTab(tabId);
@@ -76,13 +78,26 @@ export function InstallTabs() {
               onClick={() => selectAndFocusTab(tab.id)}
               onKeyDown={(event) => handleTabKeyDown(event, index)}
               className={[
-                "flex-none whitespace-nowrap min-h-[48px] px-4 py-3 text-sm font-semibold transition-colors",
+                "relative flex-none whitespace-nowrap min-h-[48px] px-4 py-3 text-sm font-semibold transition-colors",
                 isSelected
                   ? "text-[#FFCD04]"
                   : "text-[#C9AB91] hover:text-white",
               ].join(" ")}
             >
-              {tab.label}
+              <span>{tab.label}</span>
+              {isSelected ? (
+                <motion.span
+                  layoutId="install-tab-indicator"
+                  data-slot="install-tab-indicator"
+                  aria-hidden="true"
+                  transition={
+                    prefersReducedMotion
+                      ? { duration: 0 }
+                      : { type: "spring", stiffness: 420, damping: 34 }
+                  }
+                  className="pointer-events-none absolute inset-x-2 bottom-0 block rounded-full border-b-[3px] border-[#F38A0F]"
+                />
+              ) : null}
             </button>
           );
         })}
@@ -94,7 +109,7 @@ export function InstallTabs() {
         aria-labelledby={getTabDomId("installer")}
         hidden={activeTab !== "installer"}
       >
-        <div className="p-5 sm:p-8">
+        <div className="install-panel-body p-5 sm:p-8">
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="rounded-full bg-[#FFCD04] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#1E1208]">
               Recomendado
@@ -154,7 +169,7 @@ export function InstallTabs() {
         aria-labelledby={getTabDomId("portable")}
         hidden={activeTab !== "portable"}
       >
-        <div className="p-5 sm:p-8">
+        <div className="install-panel-body p-5 sm:p-8">
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="rounded-full border border-[#F38A0F]/50 bg-[#F38A0F]/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#FFCD04]">
               Sem instalação
@@ -205,7 +220,7 @@ export function InstallTabs() {
         aria-labelledby={getTabDomId("chocolatey")}
         hidden={activeTab !== "chocolatey"}
       >
-        <div className="p-5 sm:p-8">
+        <div className="install-panel-body p-5 sm:p-8">
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="rounded-full border border-[#FFCD04]/50 bg-[#FFCD04]/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#FFCD04]">
               Via terminal PowerShell
